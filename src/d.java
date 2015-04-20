@@ -9,7 +9,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;			
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
-
 import javax.swing.*;
 import javax.swing.text.html.HTMLDocument.Iterator;
 
@@ -43,6 +42,18 @@ public class d extends JFrame implements ActionListener, KeyListener, MouseListe
 	public static void line(int x1, int y1, int x2, int y2)
 	{
 		Drawable obj = new Drawable(x1, y1, x2, y2, "line");
+		objs.add(obj);
+	}
+	
+	public static void rect(int x, int y, int width, int height)
+	{
+		Drawable obj = new Drawable(x, y, width, height, "rect");
+		objs.add(obj);
+	}
+	
+	public static void oval(int x, int y, int width, int height)
+	{
+		Drawable obj = new Drawable(x, y, width, height, "oval");
 		objs.add(obj);
 	}
 
