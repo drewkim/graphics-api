@@ -28,6 +28,7 @@ public class Drawable
 			g.drawRect(x1, y1, Math.abs(x2 - x1), Math.abs(y2 - y1));
 		else if(name.equals("oval"))
 			g.drawOval(x1, y1, Math.abs(x2 - x1), Math.abs(y2 - y1));
-			
+		else
+			g.drawString(name, x1, y1);
 	}
 }

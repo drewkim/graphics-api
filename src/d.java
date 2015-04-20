@@ -1,6 +1,5 @@
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -10,10 +9,10 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 import javax.swing.*;
-import javax.swing.text.html.HTMLDocument.Iterator;
 
 public class d extends JFrame implements ActionListener, KeyListener, MouseListener, MouseMotionListener 
 {
+	private static final long serialVersionUID = 1L;
 	final int DELAY_IN_MILLISEC = 20;
 	static d di = new d();
 	
@@ -23,14 +22,15 @@ public class d extends JFrame implements ActionListener, KeyListener, MouseListe
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Timer clock= new Timer(DELAY_IN_MILLISEC, this);
+		addKeyListener(this);
+		addMouseListener(this);
+		addMouseMotionListener(this);
 		clock.start();
 	}
 	
 	public static void main(String[] args) 
 	{
-		di.addKeyListener(di);
-		di.addMouseListener(di);
-		di.addMouseMotionListener(di);
+		
 	}
 	
 	public static void window(int width, int height)
@@ -56,7 +56,13 @@ public class d extends JFrame implements ActionListener, KeyListener, MouseListe
 		Drawable obj = new Drawable(x, y, width, height, "oval");
 		objs.add(obj);
 	}
-
+	
+	public static void text(String text, int x, int y)
+	{
+		Drawable obj = new Drawable(x, y, 0, 0, "hello");
+		objs.add(obj);
+	}
+	
 	public void paint(Graphics g)
 	{
 	    for(int i = 0; i < objs.size(); i++)
@@ -69,7 +75,6 @@ public class d extends JFrame implements ActionListener, KeyListener, MouseListe
 	
 	public void actionPerformed(ActionEvent e) 
 	{
-		repaint();
 	}
 	
 	@Override
@@ -87,7 +92,7 @@ public class d extends JFrame implements ActionListener, KeyListener, MouseListe
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("clicked");
 	}
 
 	@Override
