@@ -1,22 +1,24 @@
 
-public class Test {
+public class Test 
+{
 
 	public static void main(String[] args) 
 	{
-		d.window(1440, 900);
-		d.line(10, 20, 100, 400);
-		d.rect(40, 400, 600, 900);
-		d.oval(30, 20, 100, 100);
-		d.text("hello", 100, 100);
-	}
+		Draw.window(500, 500);
+		
+		Draw.line(250, 400, 150, (int)(400 - (200*Math.sqrt(3))/2));
+		Draw.line(150, (int)(400 - (200*Math.sqrt(3))/2), 350, (int)(400 - (200*Math.sqrt(3))/2));
+		Draw.line(350, (int)(400 - (200*Math.sqrt(3))/2), 250, 400);
+		
+		Draw.oval(250, (int)((Math.sqrt(3) * 200)/6) + (int)(400 - (200*Math.sqrt(3))/2), (int)((Math.sqrt(3) * 200)/3), (int)((Math.sqrt(3) * 200)/3));
+		
+		Draw.line(250, (int)(400 - (200*Math.sqrt(3))/2), 250, 400);
+		
+		Draw.text("H.P", 240, (int)(400 - (200*Math.sqrt(3))/2) - 20);
 
-	public static void mouseMoved()
-	{
-		
-	}
-	
-	public static void mouseClicked()
-	{
-		
+		System.out.println(Draw.mouseX);
+		System.out.println(Draw.mouseY);
+		System.out.println(Draw.mousePressX);
+		System.out.println(Draw.mousePressY);
 	}
 }

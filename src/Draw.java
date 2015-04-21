@@ -10,15 +10,21 @@ import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 import javax.swing.*;
 
-public class d extends JFrame implements ActionListener, KeyListener, MouseListener, MouseMotionListener 
+public class Draw extends JFrame implements ActionListener, KeyListener, MouseListener, MouseMotionListener 
 {
 	private static final long serialVersionUID = 1L;
 	final int DELAY_IN_MILLISEC = 20;
-	static d di = new d();
+	static Draw di = new Draw();
+	public static int mouseX;
+	public static int mouseY;
+	public static int mousePressX;
+	public static int mousePressY;
+
+	private static int windowHeight;
 	
 	static ArrayList<Drawable> objs = new ArrayList<Drawable>();
 	
-	public d()
+	public Draw()
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Timer clock= new Timer(DELAY_IN_MILLISEC, this);
@@ -37,29 +43,37 @@ public class d extends JFrame implements ActionListener, KeyListener, MouseListe
 	{
 		di.setSize(width, height);
 		di.setVisible(true);
+		
+		windowHeight = height;
+		System.out.println(windowHeight);
 	}
 	
 	public static void line(int x1, int y1, int x2, int y2)
 	{
-		Drawable obj = new Drawable(x1, y1, x2, y2, "line");
+		Drawable obj = new Drawable(x1, windowHeight - y1, x2, windowHeight - y2, "line");
 		objs.add(obj);
 	}
 	
 	public static void rect(int x, int y, int width, int height)
 	{
-		Drawable obj = new Drawable(x, y, width, height, "rect");
+		Drawable obj = new Drawable(x, windowHeight - y - height, width, height, "rect");
 		objs.add(obj);
 	}
 	
 	public static void oval(int x, int y, int width, int height)
 	{
-		Drawable obj = new Drawable(x, y, width, height, "oval");
+		Drawable obj = new Drawable(x - width/2, windowHeight - y - height + height/2, width, height, "oval");
 		objs.add(obj);
+	}
+	
+	public static void polygon()
+	{
+		
 	}
 	
 	public static void text(String text, int x, int y)
 	{
-		Drawable obj = new Drawable(x, y, 0, 0, "hello");
+		Drawable obj = new Drawable(x, windowHeight - y, 0, 0, text);
 		objs.add(obj);
 	}
 	
@@ -70,11 +84,11 @@ public class d extends JFrame implements ActionListener, KeyListener, MouseListe
 	    	Drawable obj = objs.get(i);
 	    	obj.draw(g);
 	    }
-
 	}
 	
 	public void actionPerformed(ActionEvent e) 
 	{
+		repaint();
 	}
 	
 	@Override
@@ -83,22 +97,22 @@ public class d extends JFrame implements ActionListener, KeyListener, MouseListe
 		
 	}
 
-	@Override
-	public void mouseMoved(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+	public void mouseMoved(MouseEvent e) 
+	{
+		mouseX = e.getX();
+		mouseY = e.getY();
 	}
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		System.out.println("clicked");
+	public void mouseClicked(MouseEvent e) 
+	{
+		mousePressX = e.getX();
+		mousePressY = e.getY();
 	}
 
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+	public void mousePressed(MouseEvent e) 
+	{
+		mousePressX = e.getX();
+		mousePressY = e.getY();
 	}
 
 	@Override

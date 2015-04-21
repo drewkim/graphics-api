@@ -25,9 +25,9 @@ public class Drawable
 		if(name.equals("line"))
 			g.drawLine(x1, y1, x2, y2);
 		else if(name.equals("rect"))
-			g.drawRect(x1, y1, Math.abs(x2 - x1), Math.abs(y2 - y1));
+			g.drawRect(x1, y1, x2, y2);
 		else if(name.equals("oval"))
-			g.drawOval(x1, y1, Math.abs(x2 - x1), Math.abs(y2 - y1));
+			g.drawOval(x1, y1, x2, y2);
 		else
 			g.drawString(name, x1, y1);
 	}
