@@ -1,13 +1,13 @@
 # Draw
 
-Draw is an easy-to-use graphics library for beginning programmers. It provides convenient ways to use Java's graphics tools without going through the hassle of using Swing. Draw removes the mess that is creating a new graphics program in Java and instead simplifies the process down to one line of code.
+Draw is an easy-to-use graphics library for beginning programmers. It provides convenient ways to use Java's graphics tools without going through the hassle of using Swing. Draw removes the mess that is creating a new graphics program in Java and instead simplifies the process down to one line of code. With Draw, sers can quickly draw shapes and write text without having to understand the finer details of Java graphics.
 
 ### Version
 1.0.1
 
 ### Description
 
-Draw provides a layer on top of Java's graphics library to create a simple way to jump into programming wihtout having to know the in depth nuances of objects, inheritence, polymorphism, etc. All users must do is include the Draw.java file in their project folder, and they are ready to go! 
+Draw provides a layer on top of Java's graphics library to create a simple way to jump into programming wihtout having to know the in depth nuances of objects, inheritence, polymorphism, etc. All users must do is include the Draw.java file in their project folder, and they are ready to go! All commands can be written in one line and are mostly intuitive.
 
 The Draw API allows users to draw various figures on a JFrame. The figures supported are as follows:
 
@@ -19,9 +19,7 @@ The Draw API allows users to draw various figures on a JFrame. The figures suppo
 
 Draw also allows users to create new windows, change the color of subsequent figures, grab the coordinates of the mouse, and know whenever it is pressed.
 
-#####Colors
-
-Draw supports different colors for figures: Red, Orange, Yellow, Green, Blue, Cyan, MAgenta, Pink, White, Black, and Gray
+Draw supports different colors for figures: Red, Orange, Yellow, Green, Blue, Cyan, Magenta, Pink, White, Black, and Gray
 
 Draw does not conform to Java's confusing coordinate system; instead of the point (0, 0) being at the top left, it is in the bottom left. Furthermore, figures are drawn by reference to the bootom left corner.
 
