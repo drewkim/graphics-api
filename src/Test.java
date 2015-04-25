@@ -12,6 +12,7 @@ public class Test
 		
 		Draw.color("blue");
 		
+		Draw.image("orange-beach.jpg", 0, 0, 200, 200);
 		Draw.oval(250, (int)((Math.sqrt(3) * 200)/6) + (int)(400 - (200*Math.sqrt(3))/2), (int)((Math.sqrt(3) * 200)/3), (int)((Math.sqrt(3) * 200)/3));
 		
 		Draw.line(250, (int)(400 - (200*Math.sqrt(3))/2), 250, 400);
